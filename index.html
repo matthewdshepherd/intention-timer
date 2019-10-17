@@ -6,28 +6,60 @@
   </head>
   <body>
     <header>
-      <h1>Intention Timer</h1>
+      <h1 class="header__h1--title">Intention Timer</h1>
     </header>
     <main>
       <h2> New Activity</h2>
-      <section>
-        <container>
+      <section class="main__section">
+        <container class="main__section__container--selectcategory">
           <h3>Select a category:</h3>
-          <div>
-            <div>
-
+          <div class="main__section__container--selectcategory__div--categories">
+            <div class="div--categories--category">
+              <img class="div--categories--category__h4--img" type="image" src="./Images/study.svg"/>
+              <h4 class="div--categories--category__h4--title">Study</h4>
             </div>
-            <div>
-            
+            <div class="div--categories--category">
+              <img class="div--categories--category__h4--img" type="image" src="./Images/meditate.svg"/>
+              <h4 class="div--categories--category__h4--title">Meditate</h4>
             </div>
-            <div>
-            
+            <div class="div--categories--category">
+              <img class="div--categories--category__h4--img" type="image" src="./Images/exercise.svg"/>
+              <h4 class="div--categories--category__h4--title">Exercise</h4>
             </div>
           </div>
         </container>
+        <container class="main__section__container--userinput" >
+          <div class="main__section__container--userinput__div--accomplishinput">
+            <p class="userinput__div--accomplishinput--text">What would you like to accomplish during this time?</p>
+            <input class="userinput__div--accomplishinput--input" type="text" placeholder="Search" />
+          </div>
+          <div class="main__section__container--userinput__div--minutes&seconds--holder" >
+            <div class="userinput__div--minutes&seconds--holder__div">
+              <p class="userinput__div--minutes&seconds--holder__div--text">Minutes</p>
+              <input class="userinput__div--minutes&seconds--holder__div--input" type="text" />
+            </div>
+            <div class="userinput__div--minutes&seconds--holder__div">
+              <p class="userinput__div--minutes&seconds--holder__div--text">Seconds</p>
+              <input class="userinput__div--minutes&seconds--holder__div--input" type="text" />
+            </div>
+          </div>
+          <button class="main__section__container--userinput__button--startactivity" type="button" >START ACTIVITY</button>
+        </container>
       </section>
     </main>
-
+    <aside>
+      <h3 class="aside__h3--title">Past Activities</h3>
+      <div>
+        <div class="aside__div--hold--study-time-indicator">
+          <div class="aside__div--hold--study-time-indicator__div--study-time">
+            <h5 class="hold--study-time-indicator__div--study-time__h5--activity">Study</h4>
+            <p class="hold--study-time-indicator__div--study-time__h5--time">15 MIN</p>
+          </div>
+          <div class="aside__div--hold--study-time-indicator__div--indicator">indicator</div>
+      </div class="aside__div--hold--intention--text">
+        <p class="aside__div--hold--intention--text__p--intention--text">Complete Challanges from Small Groups</p>
+      </div>
+    </aside>
   </body>
   <script src="main.js"></script>
 </html>
