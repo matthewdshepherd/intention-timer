@@ -2,9 +2,6 @@
      box-sizing: border-box;
      font-family: 'Open Sans', sans-serif;
 }
- img {
-     height: 20px;
-}
 
 body {
      display: grid;
@@ -25,6 +22,7 @@ header {
 main {
   grid-area: main;
   background-color: #2B2733;
+  padding: 0 20px 20px 20px;
 }
 
 aside {
@@ -34,4 +32,57 @@ aside {
 
 .section__title--off--white {
   color: #CBC9CF;
+}
+
+.main__section {
+  background-color: #46424D;
+}
+
+.main__section__container--selectcategory__div--categories {
+  display: flex;
+  justify-content: space-evenly;
+}
+.div--categories--category {
+  border: 2px solid #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5%;
+  width: 25%
+}
+
+.div--categories--category__h4--img {
+  height: 25px;
+  margin: 10px 0 0 0;
+}
+
+.div--categories--category__h4--title {
+  margin: 5px 0 10px 0;
+}
+
+.userinput__div--minutesandseconds--holder__div--input,
+.userinput__div--accomplishinput--input {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #FFF;
+  width: 100%;
+}
+
+.main__section__container--userinput__div--minutesandseconds--holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userinput__div--minutesandseconds--holder__div {
+  display: flex;
+  flex-direction: column;
+  width: 40%
+}
+
+.userinput__div--minutesandseconds--holder__div--input {
+  /* width: 30%; */
 }
