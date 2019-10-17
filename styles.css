@@ -12,16 +12,26 @@ body {
      grid-template-areas: 'header header header' 'main main aside';
      height: 100%;
      width: 100vw;
+     background-color: #46424D;
+     color: #FFF;
 }
 
 header {
   grid-area: header;
+  display: flex;
+  justify-content: center;
 }
 
 main {
   grid-area: main;
+  background-color: #2B2733;
 }
 
 aside {
   grid-area: aside;
+  background-color: #2B2733;
+}
+
+.section__title--off--white {
+  color: #CBC9CF;
 }
