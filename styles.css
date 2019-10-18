@@ -58,13 +58,15 @@ aside {
   display: flex;
   justify-content: space-between;
 }
+
 .div--categories--category {
   border: 2px solid #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 5%;
-  width: 25%
+  width: 25%;
+  cursor: pointer;
 }
 
 .div--categories--category__h4--img {
@@ -100,7 +102,7 @@ aside {
   font-size: 20px;
   color: #FFF;
   font-weight: 300;
-  padding-bottom: 2px;
+  padding-bottom: 5px;
 }
 
 .main__section__container--userinput__div--minutesandseconds--holder {
@@ -173,3 +175,63 @@ aside {
   margin-top: 5px;
 }
 
+.border-color-study{
+  border: 2px solid #B3FD78;
+}
+
+.border-color-meditate {
+  border: 2px solid #C278FD;
+}
+
+.border-color-excercise {
+  border: 2px solid #FD8078;
+}
+
+.hiddenForm {
+  display: none;
+}
+
+.timer--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer--Title {
+  font-size: 35px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.time--count {
+  font-size: 80px;
+  font-weight: 400;
+  color: #FFF;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.start--timer {
+  border-radius: 100%;
+  border: 2px solid #FFF;
+  height: 300px;
+  width: 300px;
+  margin: 0;
+  background-color: transparent;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.start--timer--study {
+  border: 2px solid #B3FD78;
+}
+
+.start--timer--med {
+  border: 2px solid #C278FD;
+}
+
+.start--timer--ex {
+  border: 2px solid #FD8078;
+}
