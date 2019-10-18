@@ -1,10 +1,12 @@
-
-
 // QUERY SELECTORS
 const categorySelect = document.querySelector('.main__section__container--selectcategory');
 const activityInput = document.querySelector('.button--startactivity');
-
-
+let mainSection = document.querySelector('.main__section');
+let currentTopic;
+let time;
+let activity;
+let counter = 0;
+let timeStart;
 
 categorySelect.addEventListener('click', () => {
   if (event.target.classList[1] === 'cat-study') {
@@ -23,16 +25,28 @@ categorySelect.addEventListener('click', () => {
 })
 
 activityInput.addEventListener('click', () => {
-  console.log(event)
   const seconds = document.querySelector('.seconds').value;
   const accomplishment = document.querySelector('.accomplishment').value;
   const minutes = document.querySelector('.minutes').value;
- 
+  currentTopic = accomplishment
+  time = `${minutes}:${seconds}`
+  activity = getActiveCategory().split('-')[2]
+
+  timeStart = convertTimeToSecs(minutes, seconds)
   hideForm()
-  getActiveCategory()
   appendTimer(accomplishment, minutes, seconds, getActiveCategory())
   clearInputs()
 })
+
+mainSection.addEventListener('click', () => {
+  if (event.target.innerText === "START") {
+    timer()
+  }
+})
+
+const convertTimeToSecs = (mins, secs) => {
+  return ((parseInt(mins) * 60) + parseInt(secs))
+}
 
 const clearInputs = () => {
   document.querySelector('.userinput__div--accomplishinput--input').value = '';
@@ -52,19 +66,69 @@ const showForm = () => {
 
 const appendTimer = (title, mins, seconds, activeClass) => {
   document.querySelector('.main__section').insertAdjacentHTML('afterbegin', 
-    ` <container class="timer--container ">
-          <h1 class="timer--Title">${title}</h1>
-          <p class="time--count">${mins}:${seconds}</p>
-          <button type="button" class="start--timer ${activeClass}">START</button>
-        </container>`)
+  ` <container class="timer--container ">
+  <h1 class="timer--Title" id="timer--title">${title}</h1>
+  <p class="time--count" id="time--count">${mins}:${seconds}</p>
+  <button type="button" class="start--timer ${activeClass}">START</button>
+  </container>`)
 }
 
 const getActiveCategory = () => {
   if (document.getElementsByClassName('border-color-study').length) {
-   return 'start--timer--study'
-  } else if (document.getElementsByClassName('start--timer--med').length) {
+    return 'border-color-study'
+  } else if (document.getElementsByClassName('border-color-meditate').length) {
    return 'border-color-meditate'
-  } else if (document.getElementsByClassName('start--timer--ex').length) {
+  } else if (document.getElementsByClassName('border-color-excercise').length) {
    return 'border-color-excercise'
+  }
+}
+
+const timer = () => {
+  const secondCounter = () => {
+    counter++
+    updateCount()
+    if (timeStart === counter) {
+      clearInterval(interval)
+      makesideCard()
+    }
+  }
+  const interval = setInterval(secondCounter, 1000);
+}
+
+const updateCount = () => {
+  document.querySelector('.time--count').innerText=''
+  document.querySelector('.time--count').insertAdjacentText('afterbegin',
+    `${timeConversion(timeStart - counter)}
+  `)
+}
+
+const timeConversion = (s) => {
+  const min = Math.floor(s/60)
+  const sec = s % 60
+  return `${min}:${sec}`
+}
+
+
+const makesideCard = () => {
+  document.querySelector('.aside').insertAdjacentHTML('beforeend',
+    ` <div class="activityCard">
+        <div class="activityCard--hold--study-time-indicator">
+          <div class="activityCard--hold--study-time-indicator__div--study-time">
+            <h5 class="hold--study-time-indicator__div--study-time__h5--activity">${activity}</h4>
+            <p class="hold--study-time-indicator__div--study-time__h5--time">${time}</p>
+          </div>
+          <div class="indicator" id="${getClass(activity)}"></div>
+        </div>
+        <p class="activityCard--hold--intention--text__p--intention--text">${currentTopic}</p>
+      </div>`)
+}
+
+const getClass = (activity) => {
+  if (activity === 'study'){
+    return 'study'
+  } else if (activity === 'meditate') {
+    return 'meditate'
+  } else if (activity === 'excercise') {
+    return 'excercise'
   }
 }
