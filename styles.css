@@ -1,6 +1,6 @@
 * {
      box-sizing: border-box;
-     font-family: 'Open Sans', sans-serif;
+     font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -17,17 +17,23 @@ header {
   grid-area: header;
   display: flex;
   justify-content: center;
+  height: 10vh;
 }
 
 main {
   grid-area: main;
   background-color: #2B2733;
   padding: 0 20px 20px 20px;
+  height: 90vh;
 }
 
 aside {
   grid-area: aside;
   background-color: #2B2733;
+}
+
+.header__h1--title {
+  font-weight: 400;
 }
 
 .section__title--off--white {
@@ -36,11 +42,21 @@ aside {
 
 .main__section {
   background-color: #46424D;
+  padding: 0 10%;
+  height: 85%;
+  border-radius: 5px;
+  box-shadow: 5px 5px #26222D;
+  padding-top: 6%;
+}
+
+.section__title--off--white,
+.main__section__container--selectcategory__h3 {
+  font-weight: 400;
 }
 
 .main__section__container--selectcategory__div--categories {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .div--categories--category {
   border: 2px solid #FFF;
@@ -60,6 +76,16 @@ aside {
   margin: 5px 0 10px 0;
 }
 
+.main__section__container--userinput {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__section__container--userinput__div--accomplishinput {
+  margin-top: 8%;
+  height: 10%;
+}
+
 .userinput__div--minutesandseconds--holder__div--input,
 .userinput__div--accomplishinput--input {
   border:none;
@@ -70,11 +96,18 @@ aside {
   box-shadow: none;
   border-bottom: 1px solid #FFF;
   width: 100%;
+  height: 20px;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: 300;
+  padding-bottom: 2px;
 }
 
 .main__section__container--userinput__div--minutesandseconds--holder {
   display: flex;
   justify-content: space-between;
+  margin-top: 8%;
+  height: 10%;
 }
 
 .userinput__div--minutesandseconds--holder__div {
@@ -83,6 +116,11 @@ aside {
   width: 40%
 }
 
-.userinput__div--minutesandseconds--holder__div--input {
-  /* width: 30%; */
+.button--startactivity {
+  margin: 8% 0 0 0;
+  align-self: flex-end;
+  width: 35%;
+  height: 35px;
+  font-size: 15px;
+  border-radius: 5px;
 }
