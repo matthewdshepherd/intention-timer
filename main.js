@@ -1,11 +1,12 @@
-
-
 // QUERY SELECTORS
 const categorySelect = document.querySelector('.main__section__container--selectcategory');
 const activityInput = document.querySelector('.button--startactivity');
 let mainSection = document.querySelector('.main__section');
-
-
+let currentTopic;
+let time;
+let activity;
+let counter = 0;
+let timeStart;
 
 categorySelect.addEventListener('click', () => {
   if (event.target.classList[1] === 'cat-study') {
@@ -27,13 +28,15 @@ activityInput.addEventListener('click', () => {
   const seconds = document.querySelector('.seconds').value;
   const accomplishment = document.querySelector('.accomplishment').value;
   const minutes = document.querySelector('.minutes').value;
- 
+  currentTopic = accomplishment
+  time = `${minutes}:${seconds}`
+  activity = getActiveCategory().split('-')[2]
+
   timeStart = convertTimeToSecs(minutes, seconds)
   hideForm()
   appendTimer(accomplishment, minutes, seconds, getActiveCategory())
   clearInputs()
 })
-
 
 mainSection.addEventListener('click', () => {
   if (event.target.innerText === "START") {
@@ -80,20 +83,19 @@ const getActiveCategory = () => {
   }
 }
 
-let counter = 0;
-let timeStart;
 const timer = () => {
   const secondCounter = () => {
     counter++
     updateCount()
     if (timeStart === counter) {
-    clearInterval(interval)
+      clearInterval(interval)
+      makesideCard()
     }
   }
   const interval = setInterval(secondCounter, 1000);
 }
 
-const updateCount = (interval) => {
+const updateCount = () => {
   document.querySelector('.time--count').innerText=''
   document.querySelector('.time--count').insertAdjacentText('afterbegin',
     `${timeConversion(timeStart - counter)}
@@ -104,4 +106,36 @@ const timeConversion = (s) => {
   const min = Math.floor(s/60)
   const sec = s % 60
   return `${min}:${sec}`
+}
+
+
+const makesideCard = () => {
+  document.querySelector('.aside').insertAdjacentHTML('beforeend',
+    ` <div class="activityCard">
+        <div class="activityCard--hold--study-time-indicator">
+          <div class="activityCard--hold--study-time-indicator__div--study-time">
+            <h5 class="hold--study-time-indicator__div--study-time__h5--activity">${activity}</h4>
+            <p class="hold--study-time-indicator__div--study-time__h5--time">${time}</p>
+          </div>
+          <div class="indicator" id="${getClass(activity)}"></div>
+        </div>
+        <p class="activityCard--hold--intention--text__p--intention--text">${currentTopic}</p>
+      </div>`)
+}
+
+
+// const makesideCard = () => {
+//   document.querySelector('.aside').insertAdjacentText('beforeend',
+//   ``)
+// }
+
+
+const getClass = (activity) => {
+  if (activity === 'study'){
+    return 'study'
+  } else if (activity === 'meditate') {
+    return 'meditate'
+  } else if (activity === 'excercise') {
+    return 'excercise'
+  }
 }
