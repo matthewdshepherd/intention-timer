@@ -125,6 +125,18 @@ aside {
   border-radius: 5px;
 }
 
+#study{
+  background-color: #B3FD78;
+}
+
+#meditate {
+  background-color: #C278FD;
+}
+
+#excercise {
+  background-color: #FD8078;
+}
+
 .activityCard {
   border-radius: 5px;
   width: 85%;
@@ -160,3 +172,4 @@ aside {
   padding: 0 10px 0 10px;
   margin-top: 5px;
 }
+
