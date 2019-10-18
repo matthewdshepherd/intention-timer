@@ -124,3 +124,39 @@ aside {
   font-size: 15px;
   border-radius: 5px;
 }
+
+.activityCard {
+  border-radius: 5px;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  background-color: #46424D;
+}
+
+.activityCard--hold--study-time-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin: 10px 10px 0 10px
+}
+
+.indicator {
+  width: 3px;
+  height: 30px;
+  background-color: #FFF;
+  /* margin: 10px 10px 0 0; */
+}
+
+.hold--study-time-indicator__div--study-time__h5--activity {
+  margin: 0;
+}
+
+.hold--study-time-indicator__div--study-time__h5--time {
+  margin-top: 5px;
+}
+
+.activityCard--hold--intention--text__p--intention--text {
+  padding: 0 10px 0 10px;
+  margin-top: 5px;
+}
