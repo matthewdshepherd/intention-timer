@@ -3,6 +3,7 @@
 // QUERY SELECTORS
 const categorySelect = document.querySelector('.main__section__container--selectcategory');
 const activityInput = document.querySelector('.button--startactivity');
+let mainSection = document.querySelector('.main__section');
 
 
 
@@ -23,15 +24,19 @@ categorySelect.addEventListener('click', () => {
 })
 
 activityInput.addEventListener('click', () => {
-  console.log(event)
   const seconds = document.querySelector('.seconds').value;
   const accomplishment = document.querySelector('.accomplishment').value;
   const minutes = document.querySelector('.minutes').value;
  
   hideForm()
-  getActiveCategory()
   appendTimer(accomplishment, minutes, seconds, getActiveCategory())
   clearInputs()
+})
+
+mainSection.addEventListener('click', () => {
+  if (event.target.innerText === "START") {
+    timer(event)
+  }
 })
 
 const clearInputs = () => {
@@ -52,19 +57,40 @@ const showForm = () => {
 
 const appendTimer = (title, mins, seconds, activeClass) => {
   document.querySelector('.main__section').insertAdjacentHTML('afterbegin', 
-    ` <container class="timer--container ">
-          <h1 class="timer--Title">${title}</h1>
-          <p class="time--count">${mins}:${seconds}</p>
-          <button type="button" class="start--timer ${activeClass}">START</button>
-        </container>`)
+  ` <container class="timer--container ">
+  <h1 class="timer--Title" id="timer--title">${title}</h1>
+  <p class="time--count" id="time--count">${mins}:${seconds}</p>
+  <button type="button" class="start--timer ${activeClass}">START</button>
+  </container>`)
 }
 
 const getActiveCategory = () => {
   if (document.getElementsByClassName('border-color-study').length) {
-   return 'start--timer--study'
-  } else if (document.getElementsByClassName('start--timer--med').length) {
+    return 'border-color-study'
+  } else if (document.getElementsByClassName('border-color-meditate').length) {
    return 'border-color-meditate'
-  } else if (document.getElementsByClassName('start--timer--ex').length) {
+  } else if (document.getElementsByClassName('border-color-excercise').length) {
    return 'border-color-excercise'
   }
 }
+
+let counter = 0;
+const timer = () => {
+  
+  const secondCounter = () => {
+    counter++
+    console.log('COUNTING')
+    updateCount()
+  }
+  
+  setInterval(secondCounter, 1000);
+
+}
+
+const updateCount = () => {
+  document.querySelector('.time--count').innerText=''
+  document.querySelector('.time--count').insertAdjacentText('afterbegin',
+  `${counter}
+  `)
+}
+

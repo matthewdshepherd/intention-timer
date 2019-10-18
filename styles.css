@@ -175,17 +175,6 @@ aside {
   margin-top: 5px;
 }
 
-.border-color-study{
-  border: 2px solid #B3FD78;
-}
-
-.border-color-meditate {
-  border: 2px solid #C278FD;
-}
-
-.border-color-excercise {
-  border: 2px solid #FD8078;
-}
 
 .hiddenForm {
   display: none;
@@ -224,14 +213,14 @@ aside {
   cursor: pointer;
 }
 
-.start--timer--study {
+.border-color-study{
   border: 2px solid #B3FD78;
 }
 
-.start--timer--med {
+.border-color-meditate {
   border: 2px solid #C278FD;
 }
 
-.start--timer--ex {
+.border-color-excercise {
   border: 2px solid #FD8078;
 }
