@@ -28,16 +28,22 @@ activityInput.addEventListener('click', () => {
   const accomplishment = document.querySelector('.accomplishment').value;
   const minutes = document.querySelector('.minutes').value;
  
+  timeStart = convertTimeToSecs(minutes, seconds)
   hideForm()
   appendTimer(accomplishment, minutes, seconds, getActiveCategory())
   clearInputs()
 })
 
+
 mainSection.addEventListener('click', () => {
   if (event.target.innerText === "START") {
-    timer(event)
+    timer()
   }
 })
+
+const convertTimeToSecs = (mins, secs) => {
+  return ((parseInt(mins) * 60) + parseInt(secs))
+}
 
 const clearInputs = () => {
   document.querySelector('.userinput__div--accomplishinput--input').value = '';
@@ -75,22 +81,27 @@ const getActiveCategory = () => {
 }
 
 let counter = 0;
+let timeStart;
 const timer = () => {
-  
   const secondCounter = () => {
     counter++
-    console.log('COUNTING')
     updateCount()
+    if (timeStart === counter) {
+    clearInterval(interval)
+    }
   }
-  
-  setInterval(secondCounter, 1000);
-
+  const interval = setInterval(secondCounter, 1000);
 }
 
-const updateCount = () => {
+const updateCount = (interval) => {
   document.querySelector('.time--count').innerText=''
   document.querySelector('.time--count').insertAdjacentText('afterbegin',
-  `${counter}
+    `${timeConversion(timeStart - counter)}
   `)
 }
 
+const timeConversion = (s) => {
+  const min = Math.floor(s/60)
+  const sec = s % 60
+  return `${min}:${sec}`
+}
