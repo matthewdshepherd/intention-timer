@@ -123,13 +123,6 @@ const makesideCard = () => {
       </div>`)
 }
 
-
-// const makesideCard = () => {
-//   document.querySelector('.aside').insertAdjacentText('beforeend',
-//   ``)
-// }
-
-
 const getClass = (activity) => {
   if (activity === 'study'){
     return 'study'
