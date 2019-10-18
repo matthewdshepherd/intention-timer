@@ -1,0 +1,175 @@
+* {
+     box-sizing: border-box;
+     font-family: 'Montserrat', sans-serif;
+}
+
+body {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-areas: 'header header header' 'main main aside';
+     height: 100%;
+     width: 100vw;
+     background-color: #46424D;
+     color: #FFF;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+}
+
+main {
+  grid-area: main;
+  background-color: #2B2733;
+  padding: 0 20px 20px 20px;
+  height: 90vh;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #2B2733;
+}
+
+.header__h1--title {
+  font-weight: 400;
+}
+
+.section__title--off--white {
+  color: #CBC9CF;
+}
+
+.main__section {
+  background-color: #46424D;
+  padding: 0 10%;
+  height: 85%;
+  border-radius: 5px;
+  box-shadow: 5px 5px #26222D;
+  padding-top: 6%;
+}
+
+.section__title--off--white,
+.main__section__container--selectcategory__h3 {
+  font-weight: 400;
+}
+
+.main__section__container--selectcategory__div--categories {
+  display: flex;
+  justify-content: space-between;
+}
+.div--categories--category {
+  border: 2px solid #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5%;
+  width: 25%
+}
+
+.div--categories--category__h4--img {
+  height: 25px;
+  margin: 10px 0 0 0;
+}
+
+.div--categories--category__h4--title {
+  margin: 5px 0 10px 0;
+}
+
+.main__section__container--userinput {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__section__container--userinput__div--accomplishinput {
+  margin-top: 8%;
+  height: 10%;
+}
+
+.userinput__div--minutesandseconds--holder__div--input,
+.userinput__div--accomplishinput--input {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #FFF;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: 300;
+  padding-bottom: 2px;
+}
+
+.main__section__container--userinput__div--minutesandseconds--holder {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8%;
+  height: 10%;
+}
+
+.userinput__div--minutesandseconds--holder__div {
+  display: flex;
+  flex-direction: column;
+  width: 40%
+}
+
+.button--startactivity {
+  margin: 8% 0 0 0;
+  align-self: flex-end;
+  width: 35%;
+  height: 35px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+#study{
+  background-color: #B3FD78;
+}
+
+#meditate {
+  background-color: #C278FD;
+}
+
+#excercise {
+  background-color: #FD8078;
+}
+
+.activityCard {
+  border-radius: 5px;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  background-color: #46424D;
+}
+
+.activityCard--hold--study-time-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin: 10px 10px 0 10px
+}
+
+.indicator {
+  width: 3px;
+  height: 30px;
+  background-color: #FFF;
+  /* margin: 10px 10px 0 0; */
+}
+
+.hold--study-time-indicator__div--study-time__h5--activity {
+  margin: 0;
+}
+
+.hold--study-time-indicator__div--study-time__h5--time {
+  margin-top: 5px;
+}
+
+.activityCard--hold--intention--text__p--intention--text {
+  padding: 0 10px 0 10px;
+  margin-top: 5px;
+}
+

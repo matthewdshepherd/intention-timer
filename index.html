@@ -2,17 +2,18 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css" />
+    <link href=href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
     <title>Intention Timer</title>
   </head>
   <body>
     <header>
-      <h1 class="header__h1--title">Intention Timer</h1>
+      <h1 class="header__h1--title">INTENTION TIMER</h1>
     </header>
     <main>
-      <h2> New Activity</h2>
+      <h2 class="section__title--off--white" > New Activity</h2>
       <section class="main__section">
         <container class="main__section__container--selectcategory">
-          <h3>Select a category:</h3>
+          <h3 class="main__section__container--selectcategory__h3">Select a category</h3>
           <div class="main__section__container--selectcategory__div--categories">
             <div class="div--categories--category">
               <img class="div--categories--category__h4--img" type="image" src="./Images/study.svg"/>
@@ -31,34 +32,37 @@
         <container class="main__section__container--userinput" >
           <div class="main__section__container--userinput__div--accomplishinput">
             <p class="userinput__div--accomplishinput--text">What would you like to accomplish during this time?</p>
-            <input class="userinput__div--accomplishinput--input" type="text" placeholder="Search" />
+            <input class="userinput__div--accomplishinput--input" type="text"/>
           </div>
-          <div class="main__section__container--userinput__div--minutes&seconds--holder" >
-            <div class="userinput__div--minutes&seconds--holder__div">
-              <p class="userinput__div--minutes&seconds--holder__div--text">Minutes</p>
-              <input class="userinput__div--minutes&seconds--holder__div--input" type="text" />
+          <div class="main__section__container--userinput__div--minutesandseconds--holder" >
+            <div class="userinput__div--minutesandseconds--holder__div">
+              <p class="userinput__div--minutesandseconds--holder__div--text">Minutes</p>
+              <input class="userinput__div--minutesandseconds--holder__div--input" type="text" />
             </div>
-            <div class="userinput__div--minutes&seconds--holder__div">
-              <p class="userinput__div--minutes&seconds--holder__div--text">Seconds</p>
-              <input class="userinput__div--minutes&seconds--holder__div--input" type="text" />
+            <div class="userinput__div--minutesandseconds--holder__div">
+              <p class="userinput__div--minutesandseconds--holder__div--text">Seconds</p>
+              <input class="userinput__div--minutesandseconds--holder__div--input" type="text" />
             </div>
           </div>
-          <button class="main__section__container--userinput__button--startactivity" type="button" >START ACTIVITY</button>
+          <button class="button--startactivity" type="button" >START ACTIVITY</button>
         </container>
       </section>
     </main>
     <aside>
-      <h3 class="aside__h3--title">Past Activities</h3>
-      <div>
-        <div class="aside__div--hold--study-time-indicator">
-          <div class="aside__div--hold--study-time-indicator__div--study-time">
+      <h2 class="aside__h2--title section__title--off--white">Past Activities</h2>
+
+      <div class="activityCard">
+        <div class="activityCard--hold--study-time-indicator">
+          <div class="activityCard--hold--study-time-indicator__div--study-time">
             <h5 class="hold--study-time-indicator__div--study-time__h5--activity">Study</h4>
             <p class="hold--study-time-indicator__div--study-time__h5--time">15 MIN</p>
           </div>
-          <div class="aside__div--hold--study-time-indicator__div--indicator">indicator</div>
-      </div class="aside__div--hold--intention--text">
-        <p class="aside__div--hold--intention--text__p--intention--text">Complete Challanges from Small Groups</p>
+          <div class="indicator"></div>
+        </div>
+        <p class="activityCard--hold--intention--text__p--intention--text">Complete Challanges from Small Groups</p>
       </div>
+
+
     </aside>
   </body>
   <script src="main.js"></script>
